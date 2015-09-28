@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:BpmnDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:bpmn="http://stp.eclipse.org/bpmn" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmi:id="_clYzIWWhEeWQSq2yN3_lxw" iD="_clYzIGWhEeWQSq2yN3_lxw">
+  <pools xmi:type="bpmn:Pool" xmi:id="_clYzJ2WhEeWQSq2yN3_lxw" iD="_clYzJmWhEeWQSq2yN3_lxw" name="Client">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wfX1UGWhEeWQSq2yN3_lxw" source="executablepool">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_wfX1UWWhEeWQSq2yN3_lxw" key="poolIsExecutable" value="false"/>
+    </eAnnotations>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_o9QuymWhEeWQSq2yN3_lxw" iD="_o9QuyWWhEeWQSq2yN3_lxw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o9Quy2WhEeWQSq2yN3_lxw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9QuzGWhEeWQSq2yN3_lxw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9Z4uGWhEeWQSq2yN3_lxw" key="defaultDeclarationName" value="waitTimerReceiveRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9Z4vGWhEeWQSq2yN3_lxw" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WaitTimer}ReceiveRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_o9Z4uWWhEeWQSq2yN3_lxw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o9Z4umWhEeWQSq2yN3_lxw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9Z4u2WhEeWQSq2yN3_lxw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_2SCXgWWhEeWQSq2yN3_lxw" iD="_2SCXgGWhEeWQSq2yN3_lxw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2SCXgmWhEeWQSq2yN3_lxw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2SCXg2WhEeWQSq2yN3_lxw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2SCXjGWhEeWQSq2yN3_lxw" key="defaultDeclarationName" value="waitTimerReceiveResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2SCXkGWhEeWQSq2yN3_lxw" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WaitTimer}ReceiveResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_2SCXjWWhEeWQSq2yN3_lxw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2SCXjmWhEeWQSq2yN3_lxw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2SCXj2WhEeWQSq2yN3_lxw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_clYzKWWhEeWQSq2yN3_lxw" iD="_clYzKGWhEeWQSq2yN3_lxw" associations="_o9Z4uWWhEeWQSq2yN3_lxw _2SCXjWWhEeWQSq2yN3_lxw" name="Send" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_o9G9ymWhEeWQSq2yN3_lxw"/>
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_2RmSoWWhEeWQSq2yN3_lxw"/>
+    </vertices>
+  </pools>
+  <pools xmi:type="bpmn:Pool" xmi:id="_e81ysWWhEeWQSq2yN3_lxw" iD="_e81ysGWhEeWQSq2yN3_lxw" name="WaitTimer">
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_o9jpsWWhEeWQSq2yN3_lxw" iD="_o9jpsGWhEeWQSq2yN3_lxw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o9jpsmWhEeWQSq2yN3_lxw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9jps2WhEeWQSq2yN3_lxw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9jpvGWhEeWQSq2yN3_lxw" key="defaultDeclarationName" value="thisReceiveRequestMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9tasGWhEeWQSq2yN3_lxw" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WaitTimer}ReceiveRequest"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_o9jpvWWhEeWQSq2yN3_lxw" direction="From">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_o9jpvmWhEeWQSq2yN3_lxw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_o9jpv2WhEeWQSq2yN3_lxw" key="dataObjectAssociationTypeValue" value="incomingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <artifacts xmi:type="bpmn:DataObject" xmi:id="_2RvcmmWhEeWQSq2yN3_lxw" iD="_2RvcmWWhEeWQSq2yN3_lxw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2Rvcm2WhEeWQSq2yN3_lxw" source="attachedDataobject">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2RvcnGWhEeWQSq2yN3_lxw" key="isBpelDeclaration" value="true"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2R5NmGWhEeWQSq2yN3_lxw" key="defaultDeclarationName" value="thisReceiveResponseMsg"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2R5NnGWhEeWQSq2yN3_lxw" key="douri2" value="builtin:///diagram?wsdlmessage={http://thisdiagram/WaitTimer}ReceiveResponse"/>
+      </eAnnotations>
+      <associations xmi:type="bpmn:Association" xmi:id="_2R5NmWWhEeWQSq2yN3_lxw" direction="To">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_2R5NmmWhEeWQSq2yN3_lxw" source="dataObjectAssociationTypeSource">
+          <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_2R5Nm2WhEeWQSq2yN3_lxw" key="dataObjectAssociationTypeValue" value="outgoingMesssageVariable"/>
+        </eAnnotations>
+      </associations>
+    </artifacts>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_o9G9wWWhEeWQSq2yN3_lxw" iD="_o9G9wGWhEeWQSq2yN3_lxw" associations="_o9jpvWWhEeWQSq2yN3_lxw" outgoingEdges="_u8zPUWWhEeWQSq2yN3_lxw" name="Receive" activityType="Task">
+      <incomingMessages xmi:type="bpmn:MessagingEdge" href="#_o9G9ymWhEeWQSq2yN3_lxw"/>
+    </vertices>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_u8ftUWWhEeWQSq2yN3_lxw" iD="_u8ftUGWhEeWQSq2yN3_lxw" outgoingEdges="_zt608WWhEeWQSq2yN3_lxw" incomingEdges="_u8zPUWWhEeWQSq2yN3_lxw" name="Timer" activityType="EventIntermediateTimer"/>
+    <vertices xmi:type="bpmn:Activity" xmi:id="_ztxD8WWhEeWQSq2yN3_lxw" iD="_ztxD8GWhEeWQSq2yN3_lxw" associations="_2R5NmWWhEeWQSq2yN3_lxw" incomingEdges="_zt608WWhEeWQSq2yN3_lxw" name="Reply" activityType="Task">
+      <outgoingMessages xmi:type="bpmn:MessagingEdge" href="#_2RmSoWWhEeWQSq2yN3_lxw"/>
+    </vertices>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_u8zPUWWhEeWQSq2yN3_lxw" iD="_u8zPUGWhEeWQSq2yN3_lxw"/>
+    <sequenceEdges xmi:type="bpmn:SequenceEdge" xmi:id="_zt608WWhEeWQSq2yN3_lxw" iD="_zt608GWhEeWQSq2yN3_lxw"/>
+  </pools>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_o9G9ymWhEeWQSq2yN3_lxw" iD="_o9G9yWWhEeWQSq2yN3_lxw" source="_clYzKWWhEeWQSq2yN3_lxw" target="_o9G9wWWhEeWQSq2yN3_lxw">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_8jE3wGWhEeWQSq2yN3_lxw" source="attachedDataobject">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8jE3wWWhEeWQSq2yN3_lxw" key="douri" value="builtin:///xsd?xsdtype={http://www.w3.org/2001/XMLSchema}string"/>
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8jE3wmWhEeWQSq2yN3_lxw" key="douri2" value="project:///WaitTimeXMLSchema.xsd?xsdelement={http://www.example.org/LoopXMLSchema}start"/>
+    </eAnnotations>
+  </messages>
+  <messages xmi:type="bpmn:MessagingEdge" xmi:id="_2RmSoWWhEeWQSq2yN3_lxw" iD="_2RmSoGWhEeWQSq2yN3_lxw" source="_ztxD8WWhEeWQSq2yN3_lxw" target="_clYzKWWhEeWQSq2yN3_lxw"/>
+</bpmn:BpmnDiagram>

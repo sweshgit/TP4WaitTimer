@@ -1,0 +1,8 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<dd:process xmlns:dd="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:diag="http://waittimer.com/WaitTimer" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:this="http://waittimer.com/WaitTimer/WaitTimer" xmlns:Client="http://waittimer.com/WaitTimer/Client" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="this:WaitTimer" fileName="WaitTimer-WaitTimer.bpel">
+  <dd:property name="PATH">WaitTimer</dd:property>
+  <dd:property name="SVG">WaitTimer.svg</dd:property>
+  <dd:provide partnerLink="waitTimerAndClientPlkVar">
+    <dd:service name="this:CanonicServiceForClient" port="canonicPort"></dd:service>
+  </dd:provide>
+</dd:process>

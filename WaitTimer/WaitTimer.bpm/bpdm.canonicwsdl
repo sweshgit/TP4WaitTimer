@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<wsdl:definitions xmlns:diag="http://thisdiagram" xmlns:Client="http://thisdiagram/Client" xmlns:WaitTimer="http://thisdiagram/WaitTimer" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" targetNamespace="http://thisdiagram" bpdm:version="6000089" bpdm:canid="_clYzIGWhEeWQSq2yN3_lxw" bpdm:displayName="diag">
+  <pnlk:partnerLinkType name="WaitTimerAndClient" bpdm:poolOneId="_e81ysGWhEeWQSq2yN3_lxw" bpdm:poolOneIsExecutable="true" bpdm:poolOneName="WaitTimer" bpdm:poolTwoId="_clYzJmWhEeWQSq2yN3_lxw" bpdm:poolTwoIsExecutable="false" bpdm:poolTwoName="Client">
+    <pnlk:role name="WaitTimer_for_Client" portType="WaitTimer:ForClient" bpdm:thisPoolId="_e81ysGWhEeWQSq2yN3_lxw">
+      <wsdl:portType name="ForClient">
+        <wsdl:operation name="Receive" bpdm:canid="_clYzKGWhEeWQSq2yN3_lxw._o9G9wGWhEeWQSq2yN3_lxw._ztxD8GWhEeWQSq2yN3_lxw.">
+          <wsdl:input message="WaitTimer:ReceiveRequest" name="Receive" bpdm:canid="_o9G9yWWhEeWQSq2yN3_lxw" bpdm:senderId="_clYzKGWhEeWQSq2yN3_lxw" bpdm:receiverId="_o9G9wGWhEeWQSq2yN3_lxw" bpdm:senderName="Send" bpdm:receiverName="Receive" bpdm:receiverPoolId="_e81ysGWhEeWQSq2yN3_lxw" bpdm:dataobjectPointer="builtin:///xsd?xsdtype={http://www.w3.org/2001/XMLSchema}string" bpdm:bodyPartElemName="ReceiveRequest" bpdm:bodyPartElemType="{http://www.w3.org/2001/XMLSchema}string"></wsdl:input>
+          <wsdl:output message="WaitTimer:ReceiveResponse" name="ReceiveResponse" bpdm:canid="_2RmSoGWhEeWQSq2yN3_lxw" bpdm:senderId="_ztxD8GWhEeWQSq2yN3_lxw" bpdm:receiverId="_clYzKGWhEeWQSq2yN3_lxw" bpdm:senderName="Reply" bpdm:receiverName="Send" bpdm:receiverPoolId="_clYzJmWhEeWQSq2yN3_lxw" bpdm:bodyPartElemName="ReceiveResponse" bpdm:bodyPartElemType="xs:string"></wsdl:output>
+        </wsdl:operation>
+      </wsdl:portType>
+    </pnlk:role>
+  </pnlk:partnerLinkType>
+</wsdl:definitions>

@@ -1,0 +1,31 @@
+﻿<bpel:process xmlns:bpdm="http://www.intalio/designer/business-process-data-modeling" xmlns:mapper="http://www.intalio.com/designer/mapper" xmlns:WaitTimer="http://thisdiagram/WaitTimer" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:diag="http://thisdiagram" xmlns:this="http://thisdiagram/Client" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ode="http://www.apache.org/ode/type/extension" targetNamespace="http://thisdiagram/Client">
+    <bpdm:dependencies version="6000089">
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/WaitTimer" bpdm:prefix="WaitTimer" bpdm:comment="contrib=&apos;partner-pool:///_e81ysGWhEeWQSq2yN3_lxw"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema" bpdm:prefix="xs"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/2001/XMLSchema-instance" bpdm:prefix="xsi"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram" bpdm:prefix="diag" bpdm:comment="contrib=&apos;partner-pool:///_e81ysGWhEeWQSq2yN3_lxw"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://thisdiagram/Client" bpdm:prefix="this" bpdm:type="this_process"></bpdm:namespaceDefinition>
+        <bpdm:namespaceDefinition bpdm:uri="http://www.w3.org/XML/1998/namespace" bpdm:prefix="xml"></bpdm:namespaceDefinition>
+        <bpdm:namespaceContributor bpdm:url="thisprocess://this-process-types" bpdm:label="process defined this-process-types"></bpdm:namespaceContributor>
+        <bpdm:namespaceContributor bpdm:url="partner-pool:///_e81ysGWhEeWQSq2yN3_lxw" bpdm:label="WaitTimer"/>
+    </bpdm:dependencies>
+    <bpel:scope bpdm:label="Client" bpdm:ID="_clYzJmWhEeWQSq2yN3_lxw">
+        <bpel:partnerLinks>
+            <bpel:partnerLink name="waitTimerAndClientPlkVar" partnerLinkType="diag:WaitTimerAndClient" initializePartnerRole="yes" partnerRole="WaitTimer_for_Client" bpdm:invokedService="WaitTimer:CanonicServiceForClient" bpdm:invokedPort="canonicPort" bpdm:invokedSOAPAddress="${deploy_serverUrl}${deploy_baseSoapServicesUrl}/${deploy_bundleNcName}/${diagram_relativeURL}/WaitTimer/Client" bpdm:invokedIsDefault="true" bpdm:clientTasks="_clYzJmWhEeWQSq2yN3_lxw:_clYzKGWhEeWQSq2yN3_lxw" bpdm:isManaged="true" bpdm:otherPoolId="_e81ysGWhEeWQSq2yN3_lxw"/>
+        </bpel:partnerLinks>
+        <bpel:variables>
+            <bpel:variable name="waitTimerReceiveRequestMsg" messageType="WaitTimer:ReceiveRequest" bpdm:id="_o9QuyWWhEeWQSq2yN3_lxw" bpdm:messageIds=" out:_o9G9yWWhEeWQSq2yN3_lxw">
+                <bpel:from bpdm:toPart="body">
+                    <bpel:literal bpdm:linkedMessageType="WaitTimer:ReceiveRequest" bpdm:linkedPart="body"></bpel:literal>
+                </bpel:from>
+            </bpel:variable>
+            <bpel:variable name="waitTimerReceiveResponseMsg" messageType="WaitTimer:ReceiveResponse" bpdm:id="_2SCXgGWhEeWQSq2yN3_lxw" bpdm:messageIds="inc:_2RmSoGWhEeWQSq2yN3_lxw"/>
+        </bpel:variables>
+        <bpel:sequence>
+            <bpdm:messagingtask operation="Receive" partnerLink="waitTimerAndClientPlkVar" portType="WaitTimer:ForClient" isMyRole="false" enableSharing="false" bpdm:label="Send" bpdm:ID="_clYzKGWhEeWQSq2yN3_lxw">
+                <bpdm:linkset bpdm:type="outgoingMessage" bpdm:bpeltype="invoke-request" bpdm:messageVariable="waitTimerReceiveRequestMsg" bpdm:msgVarScopeId="_clYzJmWhEeWQSq2yN3_lxw" bpdm:variableIsManaged="true" bpdm:messageType="WaitTimer:ReceiveRequest" bpdm:ID="_o9G9yWWhEeWQSq2yN3_lxw"></bpdm:linkset>
+                <bpdm:linkset bpdm:type="incomingMessage" bpdm:bpeltype="invoke-receive" bpdm:messageVariable="waitTimerReceiveResponseMsg" bpdm:msgVarScopeId="_clYzJmWhEeWQSq2yN3_lxw" bpdm:variableIsManaged="true" bpdm:messageType="WaitTimer:ReceiveResponse" bpdm:ID="_2RmSoGWhEeWQSq2yN3_lxw"></bpdm:linkset>
+            </bpdm:messagingtask>
+        </bpel:sequence>
+    </bpel:scope>
+</bpel:process>

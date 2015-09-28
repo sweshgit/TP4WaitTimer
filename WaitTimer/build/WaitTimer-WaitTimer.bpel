@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:pnlk="http://docs.oasis-open.org/wsbpel/2.0/plnktype" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ode="http://www.apache.org/ode/type/extension" xmlns:this="http://waittimer.com/WaitTimer/WaitTimer" xmlns:diag="http://waittimer.com/WaitTimer" xmlns:Client="http://waittimer.com/WaitTimer/Client" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:bpmn="http://www.intalio.com/bpms" xmlns:atomic="http://ode.apache.org/atomicScope" queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0" bpmn:label="WaitTimer" name="WaitTimer" bpmn:id="_e81ysGWhEeWQSq2yN3_lxw" targetNamespace="http://waittimer.com/WaitTimer/WaitTimer">
+  <bpel:import namespace="http://waittimer.com/WaitTimer" location="WaitTimer.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:import namespace="http://waittimer.com/WaitTimer/WaitTimer" location="WaitTimer-WaitTimer.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"/>
+  <bpel:partnerLinks>
+    <bpel:partnerLink name="waitTimerAndClientPlkVar" partnerLinkType="diag:WaitTimerAndClient" myRole="WaitTimer_for_Client"/>
+  </bpel:partnerLinks>
+  <bpel:variables>
+    <bpel:variable name="thisReceiveRequestMsg" messageType="this:ReceiveRequest"/>
+    <bpel:variable name="thisReceiveResponseMsg" messageType="this:ReceiveResponse"/>
+  </bpel:variables>
+  <bpel:sequence>
+    <bpel:receive partnerLink="waitTimerAndClientPlkVar" portType="this:ForClient" operation="Receive" variable="thisReceiveRequestMsg" createInstance="yes" bpmn:label="Receive" name="Receive" bpmn:id="_o9G9wGWhEeWQSq2yN3_lxw"></bpel:receive>
+    <bpel:assign name="init-variables-WaitTimer" bpmn:id="_o9G9wGWhEeWQSq2yN3_lxw">
+      <bpel:copy bpmn:label="$thisReceiveResponseMsg">
+        <bpel:from>
+          <bpel:literal>
+<this:ReceiveResponse></this:ReceiveResponse></bpel:literal>
+        </bpel:from>
+        <bpel:to>$thisReceiveResponseMsg.body</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:wait bpmn:label="Timer" name="Timer" bpmn:id="_u8ftUGWhEeWQSq2yN3_lxw">
+      <bpel:for>"PT10S"</bpel:for>
+    </bpel:wait>
+    <bpel:assign bpmn:label="Reply" name="Reply" bpmn:id="_ztxD8GWhEeWQSq2yN3_lxw">
+      <bpel:copy>
+        <bpel:from>$thisReceiveRequestMsg.body</bpel:from>
+        <bpel:to>$thisReceiveResponseMsg.body</bpel:to>
+      </bpel:copy>
+    </bpel:assign>
+    <bpel:reply partnerLink="waitTimerAndClientPlkVar" portType="this:ForClient" operation="Receive" variable="thisReceiveResponseMsg" bpmn:label="Reply" name="Reply-1" bpmn:id="_ztxD8GWhEeWQSq2yN3_lxw"></bpel:reply>
+  </bpel:sequence>
+</bpel:process>
